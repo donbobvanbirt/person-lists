@@ -15,12 +15,11 @@ const ImageCard = (props) => {
         <Card.Description>{about}</Card.Description>
       </Card.Content>
       <Card.Content extra>
-        {/* <Button icon primary floated='right'><Icon name='edit' /></Button> */}
-        <EditModal person={props.per} editPerson={editPerson} handleChange={handleChange}/>
-        <Button icon secondary onClick={() => removePerson(id)} floated='right'><Icon name='remove' /></Button>
+        <EditModal person={props.per} editPerson={editPerson} handleChange={handleChange} />
+        <Button icon secondary onClick={() => removePerson(id)} floated="right"><Icon name="remove" /></Button>
       </Card.Content>
     </Card>
-  )
+  );
 };
 
-export default ImageCard
+export default ImageCard;

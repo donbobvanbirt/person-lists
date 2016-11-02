@@ -14,13 +14,13 @@ class PersonForm extends Component {
   submitForm = (e) => {
     e.preventDefault();
     let { name, avatar, age, about } = this.state;
-    let personObj = {
+    const personObj = {
       name: name || 'Anonymous',
       avatar: avatar || 'https://pbs.twimg.com/profile_images/716059387735965696/_qYqY6BK.jpg',
       age: age || 'Unknown',
       about: about || 'Nothing to say',
       id: uuid(),
-    }
+    };
     this.props.addPerson(personObj);
     // this.props.addPerson();
   }

@@ -1,5 +1,5 @@
-import React from 'react'
-import { Button, Header, Image, Modal, Icon, Form } from 'semantic-ui-react'
+import React from 'react';
+import { Button, Modal, Icon, Form } from 'semantic-ui-react';
 
 const EditModal = (props) => {
   const { name, age, avatar, id, about } = props.person;
@@ -7,9 +7,9 @@ const EditModal = (props) => {
   const submitEdit = (e) => {
     e.preventDefault();
     editPerson(id);
-  }
+  };
   return (
-    <Modal trigger={<Button icon primary floated='right'><Icon name='edit' /></Button>}>
+    <Modal trigger={<Button icon primary floated="right"><Icon name="edit" /></Button>}>
       <Modal.Header>Edit {name}</Modal.Header>
       <Modal.Content>
         <Modal.Description>
@@ -26,7 +26,7 @@ const EditModal = (props) => {
         </Modal.Description>
       </Modal.Content>
     </Modal>
-  )
-}
+  );
+};
 
 export default EditModal;

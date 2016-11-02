@@ -37,7 +37,7 @@ class List extends Component {
   }
 
   render() {
-    let { person } = this.props.list;
+    const { person } = this.props.list;
     let personCards = 'card';
 
     if (person) {
@@ -46,7 +46,7 @@ class List extends Component {
       })
     }
 
-    const { addPerson } = this.props;
+    // const { addPerson } = this.props;
     return (
       <div>
         <Header as="h1">Person List</Header>
