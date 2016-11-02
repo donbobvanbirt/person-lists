@@ -11,3 +11,10 @@ export function removePerson(id) {
     payload: id,
   };
 }
+
+export function editPerson(obj) {
+  return {
+    type: 'EDIT_PERSON',
+    payload: obj,
+  };
+}

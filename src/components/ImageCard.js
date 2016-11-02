@@ -1,9 +1,11 @@
-import React from 'react'
-import { Card, Icon, Image, Button } from 'semantic-ui-react'
+import React from 'react';
+import { Card, Icon, Image, Button } from 'semantic-ui-react';
 
-const ImageCard = props => {
+import EditModal from './Modal';
+
+const ImageCard = (props) => {
   const { about, age, avatar, id, name } = props.per;
-  const { removePerson } = props;
+  const { removePerson, editPerson, handleChange } = props;
   return (
     <Card>
       <Image src={avatar} />
@@ -13,7 +15,8 @@ const ImageCard = props => {
         <Card.Description>{about}</Card.Description>
       </Card.Content>
       <Card.Content extra>
-        <Button icon primary floated='right'><Icon name='edit' /></Button>
+        {/* <Button icon primary floated='right'><Icon name='edit' /></Button> */}
+        <EditModal person={props.per} editPerson={editPerson} handleChange={handleChange}/>
         <Button icon secondary onClick={() => removePerson(id)} floated='right'><Icon name='remove' /></Button>
       </Card.Content>
     </Card>

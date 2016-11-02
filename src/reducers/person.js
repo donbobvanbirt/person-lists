@@ -6,6 +6,11 @@ export default function (state = [], action) {
       return state.filter((person) => {
         return person.id !== action.payload;
       })
+    case 'EDIT_PERSON':
+      let newState = state.filter((person) => {
+        return person.id !== action.payload.id;
+      })
+      return [...newState, action.payload];
     default:
       return state;
   }
