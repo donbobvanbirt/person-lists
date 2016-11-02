@@ -4,3 +4,10 @@ export function addPerson(person) {
     payload: person,
   };
 }
+
+export function removePerson(id) {
+  return {
+    type: 'REMOVE_PERSON',
+    payload: id,
+  };
+}

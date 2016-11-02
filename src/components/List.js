@@ -6,17 +6,19 @@ import * as ListActions from '../actions/ListActions';
 import ImageCard from './ImageCard';
 
 class List extends Component {
+
+  removePerson = (id) => {
+    this.props.removePerson(id);
+  }
+
   render() {
-    console.log('this.props:', this.props)
     let { person } = this.props.list;
     let personCards = 'card';
 
     if (person) {
       personCards = person.map((per) => {
-        return <ImageCard per={per} key={per.id} />
-      }
-    )
-
+        return <ImageCard per={per} removePerson={this.removePerson}  key={per.id} />
+      })
     }
 
     const { addPerson } = this.props;
@@ -31,10 +33,10 @@ class List extends Component {
 
 const mapStateToProps = state => ({ list: state });
 
-// const mapDispatchToProps = dispatch => ({
-//   addPerson(person) {
-//     dispatch(ListActions.addPerson(person));
-//   },
-// });
+const mapDispatchToProps = dispatch => ({
+  removePerson(id) {
+    dispatch(ListActions.removePerson(id));
+  },
+});
 
-export default connect(mapStateToProps)(List);
+export default connect(mapStateToProps, mapDispatchToProps)(List);
