@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
+import { Container } from 'semantic-ui-react';
+
+import List from './List';
+import PersonForm from './PersonForm';
 
 export default class Layout extends Component {
   render() {
     return (
-      <div className='container'>
-        <h1 className='text-center'>React Webpack</h1>
-      </div>
-    )
+      <Container>
+        <List />
+        <PersonForm />
+      </Container>
+    );
   }
 }
